@@ -1,0 +1,63 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://192.168.1.8/sell?characterEncoding=utf-8&useSSL=false
+
+  jackson:
+    default-property-inclusion: non_null
+  redis:
+    host: 192.168.30.113
+    port: 6379
+    #password:  #这里没有密码不用配置，如果有密码，需要配置
+
+#spring:
+#  datasource:
+#    driver-class-name: com.mysql.jdbc.Driver
+#    username: root
+#    password: root
+#    url: jdbc:mysql://127.0.0.1:3380/weixin?characterEncoding=utf-8&useSSL=false
+#  jpa:
+#    show-sql: true
+
+server:
+  context-path: /sell
+
+#logging:
+#  pattern:
+#    console: "%d - %msg%n"
+#  #path: /var/log/tomcat/
+#  file: /var/log/tomcat/sell.log
+#  level: debug
+
+wechat:
+  mpAppId: wx029656252d222967
+  mpAppSecret: 7654dbccf3f834fbf65b84172be3e7c5
+  openAppId:
+  openAppSecret:
+  mchId: 789
+  mchKey: 111
+  keyPath: /var/weixin_cert/h5.p12
+  notifyUrl: http://sell.natapp4.cc/sell/pay/notify
+  templateId:
+    orderStatus: e-Cqq67QxD6Yni41iRiqawEySLKDJFLASKDJFL
+
+projectUrlConfig:
+  wechatMpAuthorize: http://sell.natapp4.cc
+  wechatOpenAuthorize: http://sell/natapp4.cc
+  sell: http://sell/natapp4.cc
+
+
+logging:
+  level:
+    com.imooc.dataobject.mapper: trace   #这样配置之后，mapper中的sql语句会显示在控制台
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+
+
+
+
+
+
